@@ -1,0 +1,109 @@
+[
+	{
+		"pressure metrics": [
+			{
+				"rmaxtoe": 9.047749999999994,
+				"rmaxheel": 24.22919999999999,
+				"lmaxtoe": 2.2715,
+				"lmaxheel": 22.070699999999988,
+				"rmintoe": 0.0,
+				"rminheel": 0.0455,
+				"lmintoe": 0.0,
+				"lminheel": 0.0,
+				"ravgtoe": 1.2108800738526457,
+				"ravgheel": 2.1595046703006977,
+				"lavgtoe": 0.47376132986627006,
+				"lavgheel": 1.2337153824382725
+			}
+		]
+	},
+	{
+		"flatfoot metrics": [
+			{
+				"lflatfoot": 202.36163588763887,
+				"rflatfoot": 1.9106031299454898
+			}
+		]
+	},
+	{
+		"cop metrics": [
+			{
+				"rmeancopx": 40.64156848953754,
+				"rmeancopy": 117.00784244768771,
+				"lmeancopx": 45.33888770961579,
+				"lmeancopy": 98.13312813981462
+			}
+		]
+	},
+	{
+		"stepcount metrics": [
+			{
+				"totalstepcnt": 174,
+				"lstepcnt": 100,
+				"rstepcnt": 74
+			}
+		]
+	},
+	{
+		"swing metrics": [
+			{
+				"lswingtimevar": 827.4795172410691,
+				"rswingtimevar": 247.40071468849462,
+				"swingasym": 8.95392177922613,
+				"lavgswing": 728.8690176322418,
+				"ravgswing": 609.0709219858156
+
+			}
+		]
+	},
+	{
+		"stance metrics": [
+			{
+				"lstancetimevar": 198.37202291551438,
+				"rstancetimevar": 217.3326307998856,
+				"stanceasym": -0.4694172556564447,
+				"lavgstance": 937.9493670886076,
+				"ravgstance": 946.7966903073286
+			}
+		]
+	},
+	{
+		"cadence metrics": [
+			{
+				"lmeancadence": 8.490766291657822,
+				"rmeancadence": 6.245823808686478
+			}
+		]
+	},
+	{
+		"heartbeat metrics": [
+			{
+				"minheartbeat": 68,
+				"peakheartbeat": 125,
+				"avgheartbeat": 89.75
+			}
+		]
+	},
+	{
+		"stride metrics": [
+			{
+				"rstridelenvar": 25.119851644365347,
+				"lstridelenvar": 25.320979699946882,
+				"stridelenasym": 2.2157969270764597,
+				"rstridevelovar": 51.3501381448185,
+				"lstridevelovar": 50.536297017057166,
+				"strideveloasym": 12.701132571814092,
+				"lmnstridelen": 1.0392672170993948,
+				"rmnstridelen": 1.0878915057739103,
+				"lmnstrideavelo": 0.8399845984414923,
+				"rmnstridevelo": 1.0132810471589702,
+				"lmindist": 0.6027663400601314,
+				"rmindist": 0.6170956721429227,
+				"lmaxdist": 1.4987546246133117,
+				"rmaxdist": 1.4940329539699142,
+				"lstridecnt": 73,
+				"rstridecnt": 57
+			}
+		]
+	}
+]

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#report {
+	max-width: 790px;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+		header {
+			height: 200px;
+			background-color: #20124d;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 10px;
+		}
+		hr {
+			height: 2px;
+			background-color: #20124d;
+			border: none;
+			width: 90%;
+			margin: 30px auto;
+		}
+		tr{
+			text-align: center;
+		}
+		.text-left {
+			text-align: left;
+		}
+		.bg-blue {
+			background-color: #20124d;
+		}
+		.bg-light-blue {
+			background-color: #cfe2f3;
+		}
+		.white {
+			color: white;
+		}
+
+		.p-4 {
+			padding: 8px;
+		}
+
+		.p-8 {
+			padding: 16px;
+		}
+
+		.flex {
+			display: flex;
+		}
+		.w-full {
+			width: 100%;
+		}
+		.items-center {
+			align-items: center;
+		}
+		.justify-center {
+			justify-content: center;
+		}
+		.jsutify-end {
+			justify-content: flex-end;
+		}
+		.justify-start {
+			justify-content: flex-start;
+		}
+		.justify-between {
+			justify-content: space-between;
+		}
+		.justify-around {
+			justify-content: space-around;
+		}
+		.m-16 {
+			margin-top: 32px;
+		}
+		.m-4 {
+			margin: 8px 8px;
+		}
+
+		.flex-col {
+			flex-direction: column;
+		}
+
+		.flex-wrap {
+			flex-wrap: wrap;
+		}
+
+		.max-w-100 {
+			max-width: 200px;
+		}
+		.border {
+			border: 1px solid black;
+		}
+		.bold {
+			font-weight: bold;
+		}
+		.mx-auto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.max-w-40p {
+			max-width: 40%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="report">
+			<header>
+				<h1>“ Prioritising Education and Health ” with AI based products and solutions
+					From IIT Madras
+				</h1>
+			</header>
+			<div class="flex w-full justify-around m-16">
+				<img src="iitm.png" alt="" height="225px" width="225px">
+				<img src="iitm.png" alt="" height="225px" width="225px">
+			</div>
+			<div class="flex flex-col items-center justify-center m-16">
+				<h2>
+					Hassan's Report Summary 
+				</h2>
+				<div class="flex flex-wrap justify-around w-full">
+					<div class="flex flex-col items-center justify-center max-w-100">
+						<h3 class="bg-blue white p-4">
+							Activity
+						</h3>
+						<ul class="bg-light-blue p-4">
+							<li class="m-4">Hassan’s heart beat is xxx and cadence is observed to be xxx</li>
+							<li class="m-4">Please refer to Follow Up steps below  for standard ranges for the age group</li>
+						</ul>
+					</div>
+					<div class="flex flex-col items-center justify-center max-w-100">
+						<h3 class="bg-blue white p-4">
+							Foot Health
+						</h3>
+						<ul class="bg-light-blue p-4">
+							<li class="m-4">Hassan’s foot health parameters as measured by IITM CESSA developed insole and analytics is xxx</li>
+							<li class="m-4">Please refer to Follow Up steps for standard ranges for the age group</li>
+						</ul>
+					</div>
+					<div class="flex flex-col items-center justify-center max-w-100">
+						<h3 class="bg-blue white p-4">
+							Gait Stability
+						</h3>
+						<ul class="bg-light-blue p-4">
+							<li class="m-4">Hassan's gait analysis is xxx</li>
+							<li class="m-4">Hassan's stride lenghth is xxxx compared to the average yyyy</li>
+							<li class="m-4">Please refer to Follow Up steps for standard ranges for the age group</li>
+						</ul>
+					</div>
+				</div>
+				<div class="flex items-center justify-center p-4 m-16">
+					<div class="flex flex-col border m-4">
+						<h4>Follow up based on the above:</h4>
+						<p>
+						The student and parent can login into <a href="www.eduswasth.in">www.eduswasth.in</a> and register for normal ranges of the above readings and sign up for personalized feedback based on report and specifics.
+						</p>
+					</div>
+					<div class="flex flex-col border m-4">
+						<h4>Hassan's Overall Grade:</h4>
+						<div class="flex p-4">
+
+							<span class="m-4">A+</span>
+							<span class="m-4 bg-light-blue">A</span>
+							<span class="m-4">B+</span>
+							<span class="m-4">B</span>
+							<span class="m-4">C+</span>
+							<span class="m-4">C</span>
+							<span class="m-4">D+</span>
+							<span class="m-4">D</span>
+							<span class="m-4">E</span>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<h2>PadhugAI Goals</h2>
+				<div class="flex flex-wrap justify-center w-full p-8">
+					<div class="flex flex-col m-4 border p-8 justify-center max-w-40p">
+						<p class="bold">
+						Hassan | Male | 8 years | Height: 125cm | Body Mass: 25kg
+						</p>
+						<img src="pass.jpg" alt="hassan's picture" height="360px" width="270px" class="m-4 mx-auto">
+					</div>
+					<div class="flex flex-col m-4 p-8 justify-center max-w-40p">
+						<table class="m-4">
+							<thead>
+								<tr>
+									<th class="bg-blue white">Activities for PE</th>
+									<th class="bg-blue white">Measures for PE</th>
+									<th class="bg-blue white">Measuring devices</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Sprinting, Agility drills</td>
+									<td>
+										<ul>
+											<li>Endurance test</li>
+											<li>Balance test</li>
+										</ul>
+									</td>
+									<td>
+										<ul>
+											<li>Stopwatch</li>
+											<li>Smart Feet</li>
+											<li>Smart Excercise Platform</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<img src="duration_chart.png" alt="duration chart" class="border">
+					</div>
+				</div>
+				<hr>
+				<h2>Student's Activity Levels - Heart Rate</h2>
+				<div class="flex flex-col justify-center w-full p-8">
+
+
+					<div class="flex flex-col justify-center m-16">
+						<h4>Heart Rate</h4>
+						<ul>
+							<li>
+								Average heart rate for kids ranges from <span class="bold">80 to 110 beats per minute.</span>
+							</li>
+							<li>
+								Generally, a lower heart rate at rest implies more efficient heart function and better cardiovascular fitness.
+							</li>
+							<li>
+								An unusually high resting heart rate may signify an increased risk of heart disease, stress or anxiety.
+							</li>
+						</ul>
+						<table class="m-4">
+							<thead>
+								<tr>
+									<th class="bg-blue white">Activity</th>
+									<th class="bg-blue white">Avg bpm (70 to 110)</th>
+									<th class="bg-blue white">Min bpm (&gt; 60)</th>
+									<th class="bg-blue white">Max bpm (&lt; 180 )</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="bg-blue white">Walking</td>
+									<td>94</td>
+									<td>65</td>
+									<td>133</td>
+								</tr>
+								<tr>
+									<td class="bg-blue white">Running</td>
+									<td>95</td>
+									<td>75</td>
+									<td>150</td>
+								</tr>
+								<tr>
+									<td class="bg-blue white">Jumping</td>
+									<td>110</td>
+									<td>72</td>
+									<td>107</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="flex justify-center m-16">
+						<img src="heartrate.png" alt="heart rate chart" class="border" width="600px">
+					</div>
+				</div>
+				<hr>
+				<h2>Student's Activity Levels - Cadence</h2>
+				<div class="flex flex-col justify-center w-full p-8">
+
+
+					<div class="flex flex-col justify-center m-16">
+						<h4>Cadence</h4>
+						<ul>
+							<li>
+								Cadence refers to the <span class="bold">number of steps made in one minute.</span>
+							</li>
+							<li>
+								Benefits of increasing the step rate
+								<ul>
+									<li>Reduces the body's vertical displacement. Less impact means less impact on the body</li>
+									<li>Improves the tissues ability to respond to stress</li>
+								</ul>
+							</li>
+						</ul>
+						<h3>Performance</h3>
+						<div class="flex justify-start m-16 p-4 text-left">
+							<p><span class="bold m-4">Cadence: </span> 114 </p>
+							<p><span class="bold m-4">Percentile</span>60</p>
+						</div>
+					</div>
+					<div class="flex justify-center m-16">
+						<img src="cadence.png" alt="heart rate chart" class="border" width="500px" height="230px">
+					</div>
+				</div>
+				<hr>
+				<h2>Cadence vs Heart Rate</h2>
+				<div class="flex flex-col justify-center w-full p-8">
+
+
+					<div class="flex flex-col justify-center m-16">
+						<h4>Cadence vs Heart rate clusters</h4>
+						<ul>
+							<li>
+								This compares the heart’s beats per minute recorded to the cadence of the child
+							</li>
+							<li>
+								Ideally we would like to achieve high cadence with low to moderate heart rates
+							</li>
+						</ul>
+						<h3>Performance</h3>
+						<div class="flex justify-start m-16 p-4 text-left">
+							<p><span class="bold m-4">Cadence: </span> 114 </p>
+							<p><span class="bold m-4">Heart Rate</span>94</p>
+						</div>
+					</div>
+					<div class="flex justify-center m-16">
+						<img src="cadence_vs_heart.png" alt="heart rate chart" class="border" width="500px">
+					</div>
+				</div>
+				
+				<hr>
+				<h2>Foot Health</h2>
+				<div class="flex flex-col justify-center w-full p-8">
+
+
+					<div class="flex flex-col justify-center m-16">
+						<h4>Toe Pressure and Heel Pressure</h4>
+						<ul>
+							<li>
+								Pressure exerted by the toes/ heel against the ground during the walking cycle.
+							</li>
+							<li>
+								It helps to detect early signs of abnormal foot issues - excessive pressure on specific areas, which might indicate conditions like flat feet, high arches, or other structural abnormalities.
+							</li>
+							<li>
+								For athletes, it can help <span class="bold">optimize performance by improving efficiency</span> and reducing the risk of sports-related injuries.
+							</li>
+						</ul>
+						<table class="m-4">
+							<thead>
+								<tr>
+									<th class="bg-blue white">Leg</th>
+									<th class="bg-blue white">Toe Pressure (20 to 40 kPa)</th>
+									<th class="bg-blue white">Heel Pressure (20 to 40 kPa)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="bg-blue white">Left</td>
+									<td>32</td>
+									<td>25</td>
+								</tr>
+								<tr>
+									<td class="bg-blue white">Right</td>
+									<td>28</td>
+									<td>25</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="flex justify-center m-16">
+						<img src="pressure.png" alt="heart rate chart" class="border" width="600px">
+					</div>
+				</div>
+				<hr>
+				<h2>Center of Pressure</h2>
+				<div class="flex flex-col justify-center w-full p-8">
+
+
+					<div class="flex flex-col justify-center m-16">
+						<h4>Center of Pressure (COP)</h4>
+						<ul>
+							<li>
+								Point at which the resultant force of the pressure distribution under the foot is applied.
+							</li>
+							<li>Tracking COP movements provides insights into postural control and how adjustments are made during different phases of walking to maintain stability.
+							</li>
+						</ul>
+						<table class="m-4">
+							<thead>
+								<tr>
+									<th class="bg-blue white">Leg</th>
+									<th class="bg-blue white">COP (-2 to 2cm from center)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="bg-blue white">Left</td>
+									<td>1</td>
+								</tr>
+								<tr>
+									<td class="bg-blue white">Right</td>
+									<td>-0.3</td>
+									
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="flex justify-center m-16">
+						<img src="cop.png" alt="heart rate chart" class="border" width="500px">
+					</div>
+				</div>
+				<hr>
+				<h2>Gait Stability Analysis</h2>
+				<div class="flex flex-col justify-center w-full p-8">
+
+
+					<div class="flex flex-col justify-center m-16">
+						<h4>Center of Pressure (COP)</h4>
+						<ul>
+							<li>
+								Gait analysis provides valuable insights into a person's functional <span class="bold">mobility, balance, and overall health.</span>
+							</li>
+							These parameters help healthcare professionals to diagnose, monitor, and treat conditions affecting mobility.
+							</li>
+							<li>
+								Abnormal stride length or pattern can indicate various underlying issues, ranging from biomechanical imbalances to potential health concerns.
+							</li>
+						</ul>
+						<table class="m-4">
+							<thead>
+								<tr>
+									<th class="bg-blue white">Stride Length (0.5 to 1m)</th>
+									<th class="bg-blue white">Stride Length variblity (5 to 15%)</th>
+									<th class="bg-blue white">Stride Velocity (0.8 to 1.2 m/s)</th>
+									<th class="bg-blue white">Stride Velocity variblity (5 to 15%)</th>
+									<th class="bg-blue white">Swing Time (0.3 to 0.5s)</th>
+									<th class="bg-blue white">Swing Time variblity (5 to 15%)</th>
+									<th class="bg-blue white">Stance time (0.5 to 1s)</th>
+									<th class="bg-blue white">Stance time variblity (5 to 15%)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>0.7</td>
+									<td>6</td>
+									<td>0.82</td>
+									<td>6</td>
+									<td>0.35</td>
+									<td>2</td>
+									<td>0.44</td>
+									<td>1.8</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="flex justify-center m-16">
+						<img src="gait.png" alt="heart rate chart" class="border" width="500px">
+					</div>
+				</div>
+				<hr>
+
+			</div>
+
+		</div>
+		<div class="flex justify-center p-8">
+			<button id="downloadBtn" class="bg-blue white p-4">Download Report</button>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+		<script>
+			const opts = {
+				<!-- margin: 1, -->
+				filename: 'report.pdf',
+				image: { type: 'jpeg', quality: 1 },
+				html2canvas: {
+					dpi: 192,
+					scale:4,
+					letterRendering: true,
+				},<!-- html2canvas: { scale: 2 }, -->
+				<!-- jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } -->
+			}
+			document.getElementById('downloadBtn').addEventListener('click', function() {
+				const element = document.getElementById('report'); // The part of the page you want to convert
+				<!-- html2pdf().from(element).save(); -->
+				html2pdf().from(element).set(opts).save();
+			});
+
+		</script>
+	</body>
+</html>

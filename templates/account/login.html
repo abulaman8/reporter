@@ -1,0 +1,77 @@
+{% load widget_tweaks %}
+{% load socialaccount %}
+{% load static tailwind_tags %}
+
+{% tailwind_css %}
+<link rel="stylesheet" href="{% static 'css/globals.css' %}" />
+<style>
+    body{
+        background-color: hsl(var(--background));
+    }
+</style>
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Sign In</h2>
+        
+        {% if form.non_field_errors %}
+        <div class="mb-4 text-red-500">
+            {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            
+            <div class="mb-4">
+                <label for="id_login" class="block text-sm font-medium text-gray-700">Username</label>
+                {{ form.login|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+            </div>
+            
+            
+            <div class="mb-4">
+                <label for="id_password" class="block text-sm font-medium text-gray-700">Password</label>
+                {{ form.password|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+            </div>
+            
+            
+            <div class="flex items-center mb-4">
+                {{ form.remember }}
+                <label for="id_remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+            </div>
+            
+            
+            <button type="submit" class="w-full bg-[#674190] text-white py-2 px-4 rounded-lg hover:bg-[#573479] focus:outline-none focus:bg-[#573479]">
+                Sign In
+            </button>
+        </form>
+        <div class="flex gap-4 items-center">
+            <hr class="w-full" />
+            or
+            <hr class="w-full" />
+        </div>
+        <form method="POST" action="{% provider_login_url 'google' %}">
+            {% csrf_token %}
+         <div class="mt-6">
+            <button type="submit" class="flex items-center justify-center w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none">
+                <img src="{% static 'img/google.jpeg' %}" alt="Google" class="w-5 h-5 mr-2">
+                <span>Sign in with Google</span>
+            </button>
+        </div>
+        </form>
+        
+        <div class="mt-6 text-center">
+            <p class="text-sm">
+                Don't have an account? 
+                <a href="{% url 'account_signup' %}" class="text-[#674190] hover:text-[#573479]">Sign Up</a>
+            </p>
+            <p class="text-sm mt-2">
+                <a href="{% url 'account_reset_password' %}" class="text-[#674190] hover:text-[#573479]">Forgot Password?</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% include 'includes/toast.html' %}

@@ -1,0 +1,81 @@
+{% load widget_tweaks %}
+{% load socialaccount %}
+{% load static tailwind_tags %}
+{% tailwind_css %}
+<link rel="stylesheet" href="{% static 'css/globals.css' %}" />
+<style>
+body{
+    background-color: hsl(var(--background));
+}
+</style>
+{% block content %}
+<div class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="w-full max-w-4xl bg-white rounded-lg shadow-md p-8 flex flex-wrap justify-center">
+
+        <div class="w-full lg:w-1/2 lg:border-r border-gray-300 p-6">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Sign Up</h2>
+
+            {% if form.non_field_errors %}
+            <div class="mb-4 text-red-500">
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+
+                <div class="mb-4">
+                    <label for="id_first_name" class="block text-sm font-medium text-gray-700">First Name</label>
+                    {{ form.first_name|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+                </div>
+                <div class="mb-4">
+                    <label for="id_last_name" class="block text-sm font-medium text-gray-700">Last Name</label>
+                    {{ form.last_name|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+                </div>
+                <div class="mb-4">
+                    <label for="id_username" class="block text-sm font-medium text-gray-700">Username</label>
+                    {{ form.username|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+                </div>
+                <div class="mb-4">
+                    <label for="id_email" class="block text-sm font-medium text-gray-700">Email</label>
+                    {{ form.email|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+                </div>
+                <div class="mb-4">
+                    <label for="id_password1" class="block text-sm font-medium text-gray-700">Password</label>
+                    {{ form.password1|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+                </div>
+                <div class="mb-4">
+                    <label for="id_password2" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    {{ form.password2|add_class:"form-input w-full px-4 py-2 rounded-lg" }}
+                </div>
+
+                <button type="submit" class="w-full bg-[#674190] text-white py-2 px-4 rounded-lg hover:bg-[#573479] focus:outline-none focus:bg-[#573479]">
+                    Sign Up
+                </button>
+            </form>
+        </div>
+
+        <!-- Google OAuth Section -->
+        <div class="w-full lg:w-1/2 p-6 flex flex-col justify-center">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Or</h2>
+            <form method="POST" action="{% provider_login_url 'google' %}">
+                {% csrf_token %}
+                <button type="submit" class="flex items-center justify-center w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none">
+                    <img src="{% static 'img/google.jpeg' %}" alt="Google" class="w-5 h-5 mr-2">
+                    <span>Sign up with Google</span>
+                </button>
+            </form>
+        </div>
+
+        <div class="mt-6 text-center w-full">
+            <p class="text-sm">
+                Already have an account? 
+                <a href="{% url 'account_login' %}" class="text-[#674190] hover:text-[#573479]">Sign In</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% include 'includes/toast.html' %}
