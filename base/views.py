@@ -67,9 +67,11 @@ def view_report(request):
 
     ssnid = request.POST.get('sessionid')
     student_id = request.POST.get('studentid')
+    actity_time = request.POST.get('activitytime')
     data = {
         "ssnid": int(ssnid),
-        "studentid": str(student_id)
+        "studentid": str(student_id),
+        "activitytime": int(actity_time)
     }
     try:
 

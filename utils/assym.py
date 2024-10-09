@@ -14,7 +14,7 @@ def assym_plot(data=[5, 5, 8, 4]):
     fig.add_trace(go.Bar(
         x=categories,
         y=hassan_asymmetry,
-        name="Hassan's data",
+        name="Subject's data",
         marker_color='#2E105E',
         yaxis='y1',
         width=0.4,
@@ -27,7 +27,7 @@ def assym_plot(data=[5, 5, 8, 4]):
     fig.add_trace(go.Bar(
         x=categories,
         y=p_of_asymmetry,
-        name="% of students with assymmetry",
+        name="% of Runners with assymmetry",
         marker_color='#F9A7A5',
         yaxis='y2',
         width=0.4,
@@ -38,18 +38,18 @@ def assym_plot(data=[5, 5, 8, 4]):
     ))
 
     fig.update_layout(
-        title="Hassan's Asymmetry vs % of Students with Asymmetry",
+        title="Subject's Asymmetry vs % of Runners with Asymmetry",
         xaxis=dict(
             title="Asymmetry Parameters"
         ),
         yaxis=dict(
-            title="Hassan's Asymmetry %",
+            title="Subject's Asymmetry %",
             range=[0, 10],
             titlefont=dict(color='#2E105E'),
             tickfont=dict(color='#2E105E')
         ),
         yaxis2=dict(
-            title="% of Students with Asymmetry",
+            title="% of Runners with Asymmetry",
             range=[0, 3],
             overlaying='y',
             side='right',

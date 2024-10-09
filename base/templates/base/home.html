@@ -9,27 +9,31 @@
 <div class="flex items-center justify-center min-h-screen bg-gray-100">
     <div class="w-full max-w-md bg-white rounded-lg shadow-md p-8">
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Report Prompt</h2>
-        
-        
+
+
         <form method="POST" action="{% url 'view_report' %}">
             {% csrf_token %}
-            
+
             <div class="mb-4">
                 <label for="studentid" class="block text-sm font-medium text-gray-700">Student ID</label>
-				<input type="text" name="studentid" id="studentid" class="form-input w-full px-4 py-2 rounded-lg">
+                <input type="text" name="studentid" id="studentid" class="form-input w-full px-4 py-2 rounded-lg">
             </div>
-            
-            
+
+
             <div class="mb-4">
                 <label for="sessionid" class="block text-sm font-medium text-gray-700">Session ID</label>
-				<input type="text" name="sessionid" id="sessionid" class="form-input w-full px-4 py-2 rounded-lg">
+                <input type="text" name="sessionid" id="sessionid" class="form-input w-full px-4 py-2 rounded-lg">
             </div>            
-            
+            <div class="mb-4">
+                <label for="activitytime" class="block text-sm font-medium text-gray-700">Activity Time</label>
+                <input type="text" name="activitytime" id="activitytime" class="form-input w-full px-4 py-2 rounded-lg">
+            </div>            
+
             <button type="submit" class="w-full bg-[#B22222] text-white py-2 px-4 rounded-lg hover:bg-[#800000] focus:outline-none focus:bg-[#800000]">
                 Get Report
             </button>
         </form>
-        
+
     </div>
 </div>
 
