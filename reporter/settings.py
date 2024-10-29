@@ -183,3 +183,6 @@ UNFOLD = {
 LOGIN_REDIRECT_URL = reverse_lazy('home')
 ACCOUNT_SIGNUP_REDIRECT_URL = reverse_lazy("account_login")
 LOGOUT_REDIRECT_URL = reverse_lazy("account_login")
+
+#reporter2Hcps
+#139.59.19.249
