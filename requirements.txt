@@ -17,6 +17,7 @@ django-unfold==0.37.0
 django-widget-tweaks==1.5.0
 fontawesomefree==6.6.0
 fonttools==4.53.1
+gunicorn==23.0.0
 idna==3.8
 joblib==1.4.2
 kaleido==0.2.1
