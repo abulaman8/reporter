@@ -74,14 +74,16 @@ def view_report(request):
         "activitytime": int(actity_time)
     }
     try:
+        url = "http://128.199.22.46:8000/"
 
         req = requests.get(
-            'http://10.21.170.133:8000/api/reportdata/',
+            f'{url}api/reportdata/',
             headers={'Content-Type': 'application/json'},
             data=json.dumps(data)
         )
+        print(req)
         student_data_req = requests.get(
-            "http://10.21.170.133:8000/api/schldetail/",
+            f"{url}api/schldetail/",
             headers={'Content-Type': 'application/json'},
             # data=json.dumps({"sid": "20002"})
             data=json.dumps({"sid": str(student_id)})
