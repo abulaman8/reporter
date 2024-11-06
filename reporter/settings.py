@@ -186,3 +186,4 @@ LOGOUT_REDIRECT_URL = reverse_lazy("account_login")
 
 #reporter2Hcps
 #139.59.19.249
+NPM_BIN_PATH = '/usr/bin/npm'

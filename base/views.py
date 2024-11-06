@@ -20,6 +20,8 @@ from utils.assym import assym_plot
 from utils.stride_radar import stride_radar_plot
 import requests
 import json
+from datetime import datetime
+import time
 
 
 class CustomSignupView(SignupView):
@@ -68,10 +70,12 @@ def view_report(request):
     ssnid = request.POST.get('sessionid')
     student_id = request.POST.get('studentid')
     actity_time = request.POST.get('activitytime')
+    date_obj = datetime.strptime(actity_time, "%Y-%m-%dT%H:%M")
+    timestamp = int(time.mktime(date_obj.timetuple()))
     data = {
         "ssnid": int(ssnid),
         "studentid": str(student_id),
-        "activitytime": int(actity_time)
+        "activitytime": timestamp*1000
     }
     try:
         url = "http://128.199.22.46:8000/"
