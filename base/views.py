@@ -75,10 +75,11 @@ def view_report(request):
     data = {
         "ssnid": int(ssnid),
         "studentid": str(student_id),
-        "activitytime": timestamp*1000
+        "activitytime": timestamp
     }
     try:
-        url = "http://128.199.22.46:8000/"
+        # url = "http://128.199.22.46:8000/"
+        url = "http://10.21.170.133:8000/"
 
         req = requests.get(
             f'{url}api/reportdata/',
@@ -92,7 +93,6 @@ def view_report(request):
             # data=json.dumps({"sid": "20002"})
             data=json.dumps({"sid": str(student_id)})
         )
-        print(req.status_code)
         res = req.json()
         student_data = student_data_req.json()
         student_data_status = student_data.get("status")
