@@ -1,0 +1,125 @@
+{
+  "heart_rate": {
+    "high": {
+      "interpretations": "Reflects high cardiovascular exertion, suitable for intense conditioning.",
+      "recommendations": [
+        "Incorporate interval training to manage heart rate.",
+        "Use tempo runs and controlled breathing to improve endurance."
+      ],
+      "suitable_sports": ["martial arts", "rugby"]
+    },
+    "normal": {
+      "interpretations": "Balanced conditioning, supporting consistent sprint performance.",
+      "recommendations": [
+        "Maintain aerobic and sprint training.",
+        "Occasional cadence drills."
+      ],
+      "suitable_sports": ["cycling", "volleyball"]
+    },
+    "low": {
+      "interpretations": "Indicates fatigue or reduced effort.",
+      "recommendations": [
+        "Increase sprint intensity and review recovery practices.",
+        "Use active recovery methods like light jogging."
+      ],
+      "suitable_sports": ["yoga", "pilates"]
+    }
+  },
+  "cadence": {
+    "high": {
+      "interpretations": "Strong leg turnover, indicating readiness for explosive activities.",
+      "recommendations": [
+        "Maintain high cadence and consider agility drills."
+      ],
+      "suitable_sports": ["football", "tennis"]
+    },
+    "low": {
+      "interpretations": "Suggests fatigue or reduced efficiency.",
+      "recommendations": [
+        "Focus on high-knee drills and form refinement."
+      ],
+      "suitable_sports": ["rowing", "hiking"]
+    }
+  },
+  "bmi": {
+    "underweight": {
+      "interpretations": "Below recommended weight, may affect muscle mass.",
+      "recommendations": [
+        "Focus on a balanced diet rich in proteins.",
+        "Emphasize strength training."
+      ],
+      "suitable_sports": ["swimming", "yoga"]
+    },
+    "normal": {
+      "interpretations": "Healthy weight range, supporting agility and endurance.",
+      "recommendations": [
+        "Maintain a balanced diet and combine strength and cardio workouts."
+      ],
+      "suitable_sports": ["cycling", "tennis"]
+    },
+    "overweight": {
+      "interpretations": "Above recommended weight, impacting speed.",
+      "recommendations": [
+        "Adopt balanced diet focusing on portion control.",
+        "Focus on low-impact cardio."
+      ],
+      "suitable_sports": ["rowing", "dance"]
+    },
+    "obese": {
+      "interpretations": "High weight, may hinder performance and increase injury risk.",
+      "recommendations": [
+        "Prioritize a calorie-controlled diet.",
+        "Start with low-impact activities."
+      ],
+      "suitable_sports": ["aqua aerobics", "tai chi"]
+    }
+  },
+  "toe_pressure": {
+    "high": {
+      "interpretations": "May suggest excessive reliance on the forefoot.",
+      "recommendations": [
+        "Focus on balanced push-off mechanics."
+      ],
+      "suitable_exercises": ["balance board exercises"]
+    },
+    "low": {
+      "interpretations": "Indicates insufficient toe engagement.",
+      "recommendations": [
+        "Strengthen toe flexors and improve push-off power."
+      ],
+      "suitable_exercises": ["barefoot training on soft surfaces"]
+    }
+  },
+  "heel_pressure": {
+    "high": {
+      "interpretations": "Indicates heel-strike tendency, can slow down acceleration.",
+      "recommendations": [
+        "Focus on midfoot or forefoot strike techniques."
+      ],
+      "suitable_exercises": ["treadmill sprints"]
+    },
+    "low": {
+      "interpretations": "Suggests excessive forefoot loading.",
+      "recommendations": [
+        "Improve heel engagement through posture correction."
+      ],
+      "suitable_exercises": ["hill sprints"]
+    }
+  },
+  "stride_length": {
+    "good": {
+      "interpretations": "Long stride length, indicating good flexibility and power.",
+      "recommendations": [
+        "Maintain flexibility and power-focused training."
+      ],
+      "suitable_exercises": ["track drills"]
+    },
+    "bad": {
+      "interpretations": "Short stride may reduce sprint speed.",
+      "recommendations": [
+        "Increase hip flexibility and strengthen leg muscles."
+      ],
+      "suitable_exercises": ["dynamic stretches", "hill sprints"]
+    }
+  }
+}
