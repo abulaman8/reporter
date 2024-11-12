@@ -3,20 +3,16 @@ import base64
 
 
 def plot_heart_rate(person_min=[65, 70, 72], person_avg=[94, 95, 110], person_max=[133, 150, 107]):
-    activities = ['Walking', 'Running', 'Jumping']
+    activities = ['Running']
 
-    low_start = [60, 60, 60]
-    low_end = [75, 75, 75]
+    low_start = [60]
+    low_end = [75]
 
-    normal_start = [75, 75, 75]
-    normal_end = [110, 110, 110]
+    normal_start = [75]
+    normal_end = [110]
 
-    high_start = [110, 110, 110]
-    high_end = [180, 180, 180]
-
-    # person_min = [65, 70, 72]
-    # person_avg = [94, 95, 110]
-    # person_max = [133, 150, 107]
+    high_start = [110]
+    high_end = [180]
 
     fig = go.Figure()
 
@@ -88,7 +84,8 @@ def plot_heart_rate(person_min=[65, 70, 72], person_avg=[94, 95, 110], person_ma
         xaxis_title="Heart Rate (BPM)",
         yaxis_title="Activities",
         barmode='overlay',
-        showlegend=True
+        showlegend=True,
+        height=300
     )
 
     img = fig.to_image(format="png")

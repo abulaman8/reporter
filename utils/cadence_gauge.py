@@ -2,17 +2,17 @@ import plotly.graph_objects as go
 import base64
 
 
-def cad_plot(value=114, ref=100):
+def cad_plot(value=114, ref=140):
 
     fig = go.Figure(go.Indicator(
         mode="gauge+number+delta",
         value=value,
         domain={'x': [0, 1], 'y': [0, 1]},
-        title={'text': "Cadence", 'font': {'size': 24}},
+        title={'text': "Cadence", 'font': {'size': 16}},
         delta={'reference': ref, 'increasing': {
             'color': 'green'}, 'decreasing': {'color': 'red'}},
         gauge={
-            'axis': {'range': [60, 150], 'tickwidth': 1, 'tickcolor': "darkblue"},
+            'axis': {'range': [60, 150], 'tickwidth': 1, 'tickcolor': "darkblue", 'tickfont': {'size': 12}},
             'bar': {'color': "darkblue"},
             'bgcolor': "white",
             'borderwidth': 2,
@@ -24,6 +24,10 @@ def cad_plot(value=114, ref=100):
             ],
         }
     ))
+    fig.update_layout(
+        width=458,
+        height=337
+    )
 
     img = fig.to_image(format="png")
 

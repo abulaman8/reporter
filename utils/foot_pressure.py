@@ -19,7 +19,7 @@ def pressure_plot(lt=32, lh=25, rt=28, rh=25):
             x=[label],
             y=[low_range_end],
             base=[0],
-            name=f'Low range (0 to 20 kPa)',
+            name='Low range (0 to 20 kPa)',
             marker_color='pink',
             hoverinfo='none',
             width=0.6
@@ -29,7 +29,7 @@ def pressure_plot(lt=32, lh=25, rt=28, rh=25):
             x=[label],
             y=[normal_range_end - low_range_end],
             base=[low_range_end],
-            name=f'Normal range (20 to 40 kPa)',
+            name='Normal range (20 to 40 kPa)',
             marker_color='turquoise',
             hoverinfo='none',
             width=0.6
@@ -39,7 +39,7 @@ def pressure_plot(lt=32, lh=25, rt=28, rh=25):
             x=[label],
             y=[high_range_end - normal_range_end],
             base=[normal_range_end],
-            name=f'High range (40 to 60 kPa)',
+            name='High range (40 to 60 kPa)',
             marker_color='pink',
             hoverinfo='none',
             width=0.6,

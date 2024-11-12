@@ -1,0 +1,327 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+		<style>
+body {
+	margin: 0;
+	padding: 0;
+	<!-- font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; -->
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#report {
+	max-width: 790px;
+
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+		img {
+			page-break-inside: avoid;
+		}
+
+		header {
+			height: 200px;
+			background-color: #20124d;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			font-size: 10px;
+			text-align: center;
+		}
+		hr {
+			height: 2px;
+			background-color: #20124d;
+			border: none;
+			width: 90%;
+			margin: 30px auto;
+		}
+		tr{
+			text-align: center;
+		}
+		.text-left {
+			text-align: left;
+		}
+		.bg-blue {
+			background-color: #20124d;
+		}
+		.bg-light-blue {
+			background-color: #cfe2f3;
+		}
+		.white {
+			color: white;
+		}
+
+		.p-4 {
+			padding: 8px;
+		}
+
+		.p-8 {
+			padding: 16px;
+		}
+
+		.flex {
+			display: flex;
+		}
+		.w-full {
+			width: 100%;
+		}
+		.items-center {
+			align-items: center;
+		}
+		.justify-center {
+			justify-content: center;
+		}
+		.jsutify-end {
+			justify-content: flex-end;
+		}
+		.justify-start {
+			justify-content: flex-start;
+		}
+		.justify-between {
+			justify-content: space-between;
+		}
+		.justify-around {
+			justify-content: space-around;
+		}
+		.m-16 {
+			margin-top: 32px;
+		}
+		.m-4 {
+			margin: 8px 8px;
+		}
+		.m-2 {
+			margin: 4px 4px;
+		}
+
+		.flex-col {
+			flex-direction: column;
+		}
+
+		.flex-wrap {
+			flex-wrap: wrap;
+		}
+
+		.max-w-150 {
+			max-width: 350px;
+		}
+		.min-h-75 {
+			min-height: 152px;
+		}
+		<!-- .border { -->
+		<!-- 	border: 1px solid black; -->
+		<!-- } -->
+		.bold {
+			font-weight: bold;
+		}
+		.mx-auto {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		.max-w-40p {
+			max-width: 40%;
+		}
+		.image-wrapper {
+			page-break-inside: avoid;
+		}
+		ul {
+			list-style: disc inside;
+		}
+		h4 {
+			color: turquoise;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="report">
+			<header class="p-4">
+				<h1>“ Prioritising Education and Health ” with AI based products and solutions.	
+				</h1>
+			</header>
+			<div class="flex flex-col items-center justify-center m-16">
+				<h2>
+					{{ name }}'s Report Summary 
+				</h2>
+				<div class="flex flex-wrap justify-around w-full">
+
+					<div class="flex flex-col items-center justify-center max-w-150">
+						<h3 class="bg-blue white p-4">
+							Cardio Health
+						</h3>
+						<ul class="bg-light-blue p-8 min-h-75">
+							<li class="m-4 image-wrapper">Hassan’s heart beat is {{ heartrate }} and cadence is observed to be {{ cadence }}</li>
+							<li class="m-4 image-wrapper">The average heart rate and cadence for the age category 10-12 years are {{ avg_heartrate }} bpm and {{ avg_cadence }} steps per</li>
+						</ul>
+					</div>
+
+					<div class="flex flex-col items-center justify-center max-w-150">
+						<h3 class="bg-blue white p-4">
+							Body Mass Index (BMI)
+						</h3>
+						<ul class="bg-light-blue p-8 min-h-75">
+							<li class="m-4 image-wrapper">
+								Hassan's height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
+							</li>
+						</ul>
+					</div>
+
+					<div class="flex flex-col items-center justify-center max-w-150">
+						<h3 class="bg-blue white p-4">
+							Foot Health
+						</h3>
+						<ul class="bg-light-blue p-8 min-h-75">
+							<li class="m-4 image-wrapper">
+								Hassan’s foot health parameters as measured by insole and analytics is {{ foot_health }}
+							</li>
+							<li class="m-4 image-wrapper">
+								Please refer to Follow Up steps for standard ranges for the age group
+							</li>
+						</ul>
+					</div>
+
+					<div class="flex flex-col items-center justify-center max-w-150">
+						<h3 class="bg-blue white p-4">
+							Gait Stability
+						</h3>
+						<ul class="bg-light-blue p-8 min-h-75">
+							<li class="m-4 image-wrapper">
+								Hassan's stride lenghth is {{ stride }} compared to the average {{ avg_stride }}
+							</li>
+							<li class="m-4 image-wrapper">Please refer to Follow Up steps below  for standard ranges for the age group</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="flex items-center justify-start p-4 m-16">
+				<div class="flex flex-col border m-4">
+					<h3>
+						Please refer to the annexure for detailed information
+					</h3>
+					<p><i>
+						Date of Activity: <span class="bold">{{ date }}</span>
+					</i></p>
+				</div>
+			</div>
+			<div class="flex flex-col m-4 text-left">
+				<div class="image-wrapper">
+
+					<h4>Cardio Health</h4>
+					<div class="flex flex-col text-left m-2">
+
+						<p class="m-2">
+						<span class="bold">Cadence: </span> 
+						It is the number of steps per minute, crucial for sprint speed and efficiency.
+						</p>
+						<p class="m-2">Interpretation: Higher cadence means quicker steps, balanced stride length, and better momentum.</p>
+						<p class="m-2"> Recommendation:  Use high-knee drills, strength training, and technique refinement to increase cadence.</p>
+						<p class="m-2">
+						<span class="bold">Heart Rate: </span>
+						It measures the number of heartbeats per minute, indicating cardiovascular intensity and endurance.
+						</p>
+						<p class="m-2">Interpretation: Higher HR during sprints show maximum effort, and recovery rate post-sprint reflects cardiovascular fitness.</p>
+						<p class="m-2"> Recommendation: Interval training, sprint repeats, and endurance conditioning can help sprinters improve heart rate efficiency and recovery.</p>
+					</div>
+				</div>
+
+				<h4>Body Mass Index (BMI)</h4>
+				<div class="flex flex-col text-left m-2">
+					<p class="m-2">
+					<span class="bold">BMI: </span>
+					It is a measure of body fat based on height and weight, used to assess overall body composition.
+					</p>
+					<p class="m-2">Interpretation: A healthy BMI boosts speed and agility; extremes can hinder performance and raise injury risk.</p>
+					<p class="m-2"> Recommendation:  Use balanced nutrition, strength training, and monitor body composition to maintain optimal BMI.</p>
+				</div>
+				<h4>Foot Health</h4>
+				<div class="flex flex-col text-left m-2">
+					<p class="m-2">
+					<span class="bold">Toe Pressure: </span>
+					It is the force exerted by the toes during foot strike, crucial for push-off power and stability.
+					</p>
+					<p class="m-2">Interpretation: : Higher toe pressure improves propulsion and speed; uneven pressure may indicate imbalance.</p>
+					<p class="m-2"> Recommendation: Strengthen foot muscles, practice balance, and refine sprint technique to improve toe pressure.</p>
+					<p class="m-2">
+					<span class="bold">Heel Pressure: </span>
+					 It is the force exerted on the heel during foot strike, influencing stability and impact absorption.
+					</p>
+					<p class="m-2">Interpretation: Balanced heel pressure supports controlled landings; excessive heel pressure may indicate over striding</p>
+					<p class="m-2"> Recommendation: Improve sprint form, strengthen feet, and practice proper foot strike for optimal heel pressure.</p>
+					<p class="m-2">
+					<span class="bold">Center of Pressure: </span>
+					The point where force is concentrated on the foot during contact, impacting balance & stability.
+					</p>
+					<p class="m-2">Interpretation: A stable CoP indicates balanced foot mechanics; shifts may signal uneven weight distribution.</p>
+					<p class="m-2"> Recommendationn: Focus on balance drills, strengthen stabilizing muscles, and refine sprinting form to achieve a stable CoP.</p>
+					<p class="m-2">
+					<span class="bold">Flat Foot: </span>
+					Flat foot is a low or absent foot arch, affecting alignment and support.
+					</p>
+					<p class="m-2">Interpretation: It can reduce shock absorption, impact balance, and increase injury risk.</p>
+					<p class="m-2"> Recommendation: Strengthen foot arches, use supportive shoes, and focus on proper sprinting technique.</p>
+				
+				</div>
+				<h4>Gait Stability</h4>
+				<div class="flex flex-col text-left m-2">
+					<p class="m-2">
+					<span class="bold">Stride Length: </span>
+					 It is the distance covered in one step during a sprint, contributing to overall speed and efficiency.
+					</p>
+				<p class="m-2">Interpretation: Longer, controlled strides improve speed, but over striding can lead to inefficiency & increased injury risk.</p>
+				<p class="m-2"> Recommendation: Practice flexibility and strength exercises, focus on sprint technique.</p>
+				<p class="m-2">
+				<span class="bold">Stride Velocity: </span>
+				It is the speed of each stride, combining length and frequency
+				</p>
+				<p class="m-2">Interpretation: Higher stride velocity means faster sprints, balancing length and cadence.</p>
+				<p class="m-2"> Recommendation: : Focus on interval sprints, strength training, and technique drills to boost stride velocity.</p>
+				</div>
+
+			</div>
+		</div>
+		<div class="flex justify-center p-8">
+			<button id="downloadBtn" class="bg-blue white p-4">Download Report</button>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+		<script>
+			const opts = {
+				filename: 'summary.pdf',
+				image: { type: 'jpeg', quality: 1 },
+				html2canvas: {
+					dpi: 192,
+					scale: 2,
+					letterRendering: true,
+				},
+			};
+
+			document.getElementById('downloadBtn').addEventListener('click', function() {
+				const element = document.getElementById('report'); // The part of the page you want to convert
+				const button = document.getElementById('downloadBtn');
+				button.disabled = true;
+				button.innerText = 'Generating PDF...';
+
+				// Generate PDF and re-enable the button once done
+				html2pdf().from(element).set(opts).save().then(function() {
+					button.disabled = false;
+					button.innerText = 'Download Report';
+				}).catch(function(error) {
+					button.disabled = false;
+					button.innerText = 'Download Report';
+					console.error('PDF generation failed:', error);
+				});
+			});
+		</script>
+	</body>
+</html>
