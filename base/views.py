@@ -46,7 +46,9 @@ def view_suumary(request):
             data=json.dumps({"sid": str(student_id)})
         )
         res = req.json()
+        # __import__('pprint').pprint(res)
         student_data = student_data_req.json()
+        # __import__('pprint').pprint(student_data)
         student_data_status = student_data.get("status")
     except Exception as e:
         print(e)
@@ -63,9 +65,23 @@ def view_suumary(request):
     swing_metrics = res[4]["swing metrics"]
     cop_metrics = res[2]["cop metrics"]
     pressure_metrics = res[0]["pressure metrics"]
+    flat_foot_metrics = res[1]["flatfoot metrics"]
     height = student_data["height"]
     wieght = student_data["weight"]
-    bmi = round(int(wieght) / (int(height) * int(height)), 2)
+    bmi = round((float(wieght) * 10000) / (float(height) * float(height)), 2)
+    print("bmi", bmi)
+    age_group_data = {
+        "heart_rate": {
+            "9-11": [70, 120],
+            "12-14": [60, 105],
+            "15-17": [60, 100],
+        },
+        "cadence": {
+            "9-11": [150, 180],
+            "12-14": [160, 180],
+            "15-17": [160, 180],
+        }
+    }
     with open("data.json", "r") as f:
         content = json
     data = {
@@ -76,11 +92,12 @@ def view_suumary(request):
         "bmi": bmi,
         "heartrate": int(heart_beat_metrics[0]["avgheartbeat"]),
         "cadence": int(cadence_metrics[0]["rmeancadence"]),
-        "right_toe_pressure": round(pressure_metrics[0]["ravgtoe"], 2),
-        "left_toe_pressure": round(pressure_metrics[0]["lavgtoe"], 2),
-        "right_heel_pressure": round(pressure_metrics[0]["ravgheel"], 2),
-        "left_heel_pressure": round(pressure_metrics[0]["lavgheel"], 2),
-        "stride": round(stride_metrics[0]["lmnstridelen"], 2),
+        "toe_pressure": round(pressure_metrics[0]["ravgtoe"], 2),
+        "heel_pressure": round(pressure_metrics[0]["ravgheel"], 2),
+        "stride_length": round(stride_metrics[0]["lmnstridelen"], 2),
+        "stride_velocity": round(stride_metrics[0]["lmnstrideavelo"], 2),
+        "center_of_pressure": ((round(cop_metrics[0]["rmeancopx"], 2) ** 2) + (round(cop_metrics[0]["rmeancopy"], 2) ** 2)) ** 0.5,
+        "flat_foot": round(flat_foot_metrics[0]["rflatfoot"], 2),
     }
 
     return render(request, 'base/summary.html', data)

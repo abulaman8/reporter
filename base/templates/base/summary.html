@@ -161,8 +161,8 @@ body {
 							Cardio Health
 						</h3>
 						<ul class="bg-light-blue p-8 min-h-75">
-							<li class="m-4 image-wrapper">{{ name }}’s heart beat is {{ heartrate }} and cadence is observed to be {{ cadence }}</li>
-							<li class="m-4 image-wrapper">Please refer to Follow Up steps below  for standard ranges for the age group</li>
+							<li class="m-4 image-wrapper">Hassan’s heart beat is {{ heartrate }} and cadence is observed to be {{ cadence }}</li>
+							<li class="m-4 image-wrapper">The average heart rate and cadence for the age category 10-12 years are {{ avg_heartrate }} bpm and {{ avg_cadence }}.</li>
 						</ul>
 					</div>
 
@@ -172,10 +172,7 @@ body {
 						</h3>
 						<ul class="bg-light-blue p-8 min-h-75">
 							<li class="m-4 image-wrapper">
-								{{ name }}'s height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
-							</li>
-							<li class="m-4 image-wrapper">
-								Please refer to the follow-u steps below for standard BMI ranges for the age group
+								Hassan's height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
 							</li>
 						</ul>
 					</div>
@@ -185,11 +182,19 @@ body {
 							Foot Health
 						</h3>
 						<ul class="bg-light-blue p-8 min-h-75">
-							<li class="m-4 image-wrapper">
-								{{ name }}’s foot health parameters as measured by insole and analytics is {{ foot_health }}
+							<li class="m-4 image-wrapper">Hassan's toe pressure
+								is observed to be
+								{{ toe_pressure }}, heel pressure
+								is {{ heel_pressure }}, center of
+								pressure is {{ center_of_pressure }} and
+								Flat foot is {{ flat_foot }}
 							</li>
 							<li class="m-4 image-wrapper">
-								Please refer to Follow Up steps for standard ranges for the age group
+								The average values
+								among the age
+								category 10-12 years
+								are found to be {{ avg_toe_pressure }},
+								{{ avg_heel_pressure }}, {{ avg_center_of_pressure }} and {{ avg_flat_foot }}
 							</li>
 						</ul>
 					</div>
@@ -200,9 +205,18 @@ body {
 						</h3>
 						<ul class="bg-light-blue p-8 min-h-75">
 							<li class="m-4 image-wrapper">
-								{{ name }}'s stride lenghth is {{ stride }} compared to the average {{ avg_stride }}
+								Hassan's stride
+								length is
+								observed to be
+								{{ stride_length }} and stride
+								velocity is {{ stride_velocity }}
 							</li>
-							<li class="m-4 image-wrapper">Please refer to Follow Up steps below  for standard ranges for the age group</li>
+							<li class="m-4 image-wrapper">The average
+								values among the
+								age category 10-
+								12 years are
+								found to be {{ avg_stride_length }}
+								and {{ avg_stride_velocity }}</li>
 						</ul>
 					</div>
 				</div>
@@ -233,8 +247,8 @@ body {
 						<span class="bold">Heart Rate: </span>
 						It measures the number of heartbeats per minute, indicating cardiovascular intensity and endurance.
 						</p>
-						<p class="m-2">Interpretation: Lower heart rate means a healthier heart, reduced risk of cardiovascular disease.</p>
-						<p class="m-2"> Recommendation:  Maintain a healthy heart rate by exercising regularly and following a balanced diet.</p>
+						<p class="m-2">Interpretation: Higher HR during sprints show maximum effort, and recovery rate post-sprint reflects cardiovascular fitness.</p>
+						<p class="m-2"> Recommendation: Interval training, sprint repeats, and endurance conditioning can help sprinters improve heart rate efficiency and recovery.</p>
 					</div>
 				</div>
 
@@ -242,10 +256,10 @@ body {
 				<div class="flex flex-col text-left m-2">
 					<p class="m-2">
 					<span class="bold">BMI: </span>
-					BMI is a measure of body fat based on height and weight.
+					It is a measure of body fat based on height and weight, used to assess overall body composition.
 					</p>
-					<p class="m-2">Interpretation: Higher BMI means higher body fat, increased risk of health issues.</p>
-					<p class="m-2"> Recommendation:  Maintain a healthy BMI by exercising regularly and following a balanced diet.</p>
+					<p class="m-2">Interpretation: A healthy BMI boosts speed and agility; extremes can hinder performance and raise injury risk.</p>
+					<p class="m-2"> Recommendation:  Use balanced nutrition, strength training, and monitor body composition to maintain optimal BMI.</p>
 				</div>
 				<h4>Foot Health</h4>
 				<div class="flex flex-col text-left m-2">
@@ -253,26 +267,26 @@ body {
 					<span class="bold">Toe Pressure: </span>
 					It is the force exerted by the toes during foot strike, crucial for push-off power and stability.
 					</p>
-					<p class="m-2">Interpretation: Lower toe pressure means a healthy foot, reduced risk of foot issues.</p>
-					<p class="m-2"> Recommendation:  Maintain a healthy foot by exercising regularly and following a balanced diet.</p>
+					<p class="m-2">Interpretation: : Higher toe pressure improves propulsion and speed; uneven pressure may indicate imbalance.</p>
+					<p class="m-2"> Recommendation: Strengthen foot muscles, practice balance, and refine sprint technique to improve toe pressure.</p>
 					<p class="m-2">
 					<span class="bold">Heel Pressure: </span>
 					 It is the force exerted on the heel during foot strike, influencing stability and impact absorption.
 					</p>
-					<p class="m-2">Interpretation: Lower heel pressure means a healthy foot, reduced risk of foot issues.</p>
-					<p class="m-2"> Recommendation:  Maintain a healthy foot by exercising regularly and following a balanced diet.</p>
+					<p class="m-2">Interpretation: Balanced heel pressure supports controlled landings; excessive heel pressure may indicate over striding</p>
+					<p class="m-2"> Recommendation: Improve sprint form, strengthen feet, and practice proper foot strike for optimal heel pressure.</p>
 					<p class="m-2">
 					<span class="bold">Center of Pressure: </span>
 					The point where force is concentrated on the foot during contact, impacting balance & stability.
 					</p>
-					<p class="m-2">Interpretation: Lower center of pressure means a healthy foot, reduced risk of foot issues.</p>
-					<p class="m-2"> Recommendation:  Maintain a healthy foot by exercising regularly and following a balanced diet.</p>
+					<p class="m-2">Interpretation: A stable CoP indicates balanced foot mechanics; shifts may signal uneven weight distribution.</p>
+					<p class="m-2"> Recommendationn: Focus on balance drills, strengthen stabilizing muscles, and refine sprinting form to achieve a stable CoP.</p>
 					<p class="m-2">
 					<span class="bold">Flat Foot: </span>
 					Flat foot is a low or absent foot arch, affecting alignment and support.
 					</p>
-					<p class="m-2">Interpretation: Better gait stability means a healthier body, reduced risk of injury.</p>
-					<p class="m-2"> Recommendation:  Maintain a healthy foot by exercising regularly and following a balanced diet.</p>
+					<p class="m-2">Interpretation: It can reduce shock absorption, impact balance, and increase injury risk.</p>
+					<p class="m-2"> Recommendation: Strengthen foot arches, use supportive shoes, and focus on proper sprinting technique.</p>
 				
 				</div>
 				<h4>Gait Stability</h4>
@@ -281,14 +295,14 @@ body {
 					<span class="bold">Stride Length: </span>
 					 It is the distance covered in one step during a sprint, contributing to overall speed and efficiency.
 					</p>
-				<p class="m-2">Interpretation: Better stride length means a healthier body, reduced risk of injury.</p>
-				<p class="m-2"> Recommendation:  Maintain a healthy stride length by exercising regularly and following a balanced diet.</p>
+				<p class="m-2">Interpretation: Longer, controlled strides improve speed, but over striding can lead to inefficiency & increased injury risk.</p>
+				<p class="m-2"> Recommendation: Practice flexibility and strength exercises, focus on sprint technique.</p>
 				<p class="m-2">
 				<span class="bold">Stride Velocity: </span>
-				The rate of change in stride length, indicating the speed of the child's gait.
+				It is the speed of each stride, combining length and frequency
 				</p>
-				<p class="m-2">Interpretation: Better stride velocity means a healthier body, reduced risk of injury.</p>
-				<p class="m-2"> Recommendation:  Maintain a healthy stride velocity by exercising regularly and following a balanced diet.</p>
+				<p class="m-2">Interpretation: Higher stride velocity means faster sprints, balancing length and cadence.</p>
+				<p class="m-2"> Recommendation: : Focus on interval sprints, strength training, and technique drills to boost stride velocity.</p>
 				</div>
 
 			</div>
