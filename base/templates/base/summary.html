@@ -31,7 +31,7 @@ body {
 		}
 
 		header {
-			height: 200px;
+			height: 60px;
 			background-color: #20124d;
 			display: flex;
 			justify-content: center;
@@ -63,13 +63,13 @@ body {
 			color: white;
 		}
 
-		.p-4 {
-			padding: 8px;
-		}
-
-		.p-8 {
-			padding: 16px;
-		}
+		<!-- .p-4 { -->
+		<!-- 	padding: 8px; -->
+		<!-- } -->
+		<!---->
+		<!-- .p-8 { -->
+		<!-- 	padding: 16px; -->
+		<!-- } -->
 
 		.flex {
 			display: flex;
@@ -95,15 +95,15 @@ body {
 		.justify-around {
 			justify-content: space-around;
 		}
-		.m-16 {
-			margin-top: 32px;
-		}
-		.m-4 {
-			margin: 8px 8px;
-		}
-		.m-2 {
-			margin: 4px 4px;
-		}
+		<!-- .m-16 { -->
+		<!-- 	margin-top: 32px; -->
+		<!-- } -->
+		<!-- .m-4 { -->
+		<!-- 	margin: 8px 8px; -->
+		<!-- } -->
+		<!-- .m-2 { -->
+		<!-- 	margin: 4px 4px; -->
+		<!-- } -->
 
 		.flex-col {
 			flex-direction: column;
@@ -114,34 +114,53 @@ body {
 		}
 
 		.max-w-150 {
-			max-width: 350px;
+			max-width: 185px;
 		}
-		.min-h-75 {
-			min-height: 152px;
+		.min-h-60 {
+			min-height: 120px;
+		}
+		.min-h-200 {
+			min-height: 200px;
 		}
 		<!-- .border { -->
-		<!-- 	border: 1px solid black; -->
-		<!-- } -->
-		.bold {
-			font-weight: bold;
-		}
-		.mx-auto {
-			margin-left: auto;
-			margin-right: auto;
-		}
+			<!-- 	border: 1px solid black; -->
+			<!-- } -->
+			.bold {
+				font-weight: bold;
+			}
+			.mx-auto {
+				margin-left: auto;
+				margin-right: auto;
+			}
 
-		.max-w-40p {
-			max-width: 40%;
-		}
-		.image-wrapper {
-			page-break-inside: avoid;
-		}
-		ul {
-			list-style: disc inside;
-		}
-		h4 {
-			color: turquoise;
-		}
+			.max-w-40p {
+				max-width: 40%;
+			}
+			.image-wrapper {
+				page-break-inside: avoid;
+			}
+			ul {
+				list-style: disc inside;
+			}
+			h4 {
+				color: turquoise;
+				padding: 1px;
+				margin: 0;
+			}
+			h3{
+				padding: 1px;
+				margin: 0;
+			}
+*{
+	margin: 2px;
+	padding: 2px;
+}
+								p{
+									margin: 0;
+									padding: 0;
+								}
+								
+
 		</style>
 	</head>
 	<body>
@@ -151,73 +170,81 @@ body {
 				</h1>
 			</header>
 			<div class="flex flex-col items-center justify-center m-16">
-				<h2>
-					{{ name }}'s Report Summary 
-				</h2>
+				<!-- <h2> -->
+				<!-- 	{{ name }}'s Report Summary  -->
+				<!-- </h2> -->
 				<div class="flex flex-wrap justify-around w-full">
 
-					<div class="flex flex-col items-center justify-center max-w-150">
+					<div class="flex flex-col items-center justify-start max-w-150">
 						<h3 class="bg-blue white p-4">
 							Cardio Health
 						</h3>
-						<ul class="bg-light-blue p-8 min-h-75">
-							<li class="m-4 image-wrapper">Hassan’s heart beat is {{ heartrate }} and cadence is observed to be {{ cadence }}</li>
-							<li class="m-4 image-wrapper">The average heart rate and cadence for the age category 10-12 years are {{ avg_heartrate }} bpm and {{ avg_cadence }}.</li>
-						</ul>
+						<div class="min-h-200 bg-light-blue">
+							<ul class="bg-light-blue p-8 min-h-60">
+								<li class="m-4 image-wrapper">{{ name }}’s heart beat is {{ heartrate }} and cadence is observed to be {{ cadence }}</li>
+								<li class="m-4 image-wrapper">The average heart rate and cadence for the age category 10-12 years are {{ avg_heartrate }} bpm and {{ avg_cadence }}.</li>
+							</ul>
+						</div>
 					</div>
 
-					<div class="flex flex-col items-center justify-center max-w-150">
+					<div class="flex flex-col items-center justify-start max-w-150">
 						<h3 class="bg-blue white p-4">
-							Body Mass Index (BMI)
+							Body Mass Index
 						</h3>
-						<ul class="bg-light-blue p-8 min-h-75">
-							<li class="m-4 image-wrapper">
-								Hassan's height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
-							</li>
-						</ul>
+						<div class="min-h-200 bg-light-blue">
+							<ul class="bg-light-blue p-8 min-h-60">
+								<li class="m-4 image-wrapper">
+									{{ name }}'s height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
+								</li>
+							</ul>
+						</div>
 					</div>
 
-					<div class="flex flex-col items-center justify-center max-w-150">
+					<div class="flex flex-col items-center justify-start max-w-150">
 						<h3 class="bg-blue white p-4">
 							Foot Health
 						</h3>
-						<ul class="bg-light-blue p-8 min-h-75">
-							<li class="m-4 image-wrapper">Hassan's toe pressure
-								is observed to be
-								{{ toe_pressure }}, heel pressure
-								is {{ heel_pressure }}, center of
-								pressure is {{ center_of_pressure }} and
-								Flat foot is {{ flat_foot }}
-							</li>
-							<li class="m-4 image-wrapper">
-								The average values
-								among the age
-								category 10-12 years
-								are found to be {{ avg_toe_pressure }},
-								{{ avg_heel_pressure }}, {{ avg_center_of_pressure }} and {{ avg_flat_foot }}
-							</li>
-						</ul>
+						<div class="min-h-200 bg-light-blue">
+							<ul class="bg-light-blue p-8 min-h-60">
+								<li class="m-4 image-wrapper">{{ name }}'s toe pressure
+									is observed to be
+									{{ toe_pressure }}, heel pressure
+									is {{ heel_pressure }}, center of
+									pressure is {{ center_of_pressure }} and
+									Flat foot is {{ flat_foot }}
+								</li>
+								<li class="m-4 image-wrapper">
+									The average values
+									among the age
+									category 10-12 years
+									are found to be {{ avg_toe_pressure }},
+									{{ avg_heel_pressure }}, {{ avg_center_of_pressure }} and {{ avg_flat_foot }}
+								</li>
+							</ul>
+						</div>
 					</div>
 
-					<div class="flex flex-col items-center justify-center max-w-150">
+					<div class="flex flex-col items-center justify-start max-w-150">
 						<h3 class="bg-blue white p-4">
 							Gait Stability
 						</h3>
-						<ul class="bg-light-blue p-8 min-h-75">
-							<li class="m-4 image-wrapper">
-								Hassan's stride
-								length is
-								observed to be
-								{{ stride_length }} and stride
-								velocity is {{ stride_velocity }}
-							</li>
-							<li class="m-4 image-wrapper">The average
-								values among the
-								age category 10-
-								12 years are
-								found to be {{ avg_stride_length }}
-								and {{ avg_stride_velocity }}</li>
-						</ul>
+						<div class="min-h-200 bg-light-blue">
+							<ul class="bg-light-blue p-8 min-h-60">
+								<li class="m-4 image-wrapper">
+									{{ name }}'s stride
+									length is
+									observed to be
+									{{ stride_length }} and stride
+									velocity is {{ stride_velocity }}
+								</li>
+								<li class="m-4 image-wrapper">The average
+									values among the
+									age category 10-
+									12 years are
+									found to be {{ avg_stride_length }}
+									and {{ avg_stride_velocity }}</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -226,9 +253,6 @@ body {
 					<h3>
 						Please refer to the annexure for detailed information
 					</h3>
-					<p><i>
-						Date of Activity: <span class="bold">{{ date }}</span>
-					</i></p>
 				</div>
 			</div>
 			<div class="flex flex-col m-4 text-left">
