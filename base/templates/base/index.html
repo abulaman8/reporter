@@ -65,9 +65,9 @@ body {
 			padding: 8px;
 		}
 
-		.p-8 {
-			padding: 16px;
-		}
+		<!-- .p-8 { -->
+		<!-- 	padding: 16px; -->
+		<!-- } -->
 
 		.flex {
 			display: flex;
@@ -111,6 +111,15 @@ body {
 		.max-w-100 {
 			max-width: 200px;
 		}
+		.min-h-60 {
+			min-height: 120px;
+		}
+		.max-w-150 {
+			max-width: 185px;
+		}
+		.min-h-200 {
+			min-height: 220px;
+		}
 		<!-- .border { -->
 		<!-- 	border: 1px solid black; -->
 		<!-- } -->
@@ -128,76 +137,196 @@ body {
 		.image-wrapper {
 			page-break-inside: avoid;
 		}
+		.summary * {
+			margin: 2px;
+			padding: 2px;
+			font-size: 0.95rem;
+		}
+		.summary header {
+			height: 60px;
+		}
+		.summary p {
+			margin: 0;
+			padding: 0;
+		}
+		.summary h4 {
+			margin: 0;
+			padding: 0;
+			color: turquoise;
+		}
+		ul {
+			list-style: disc inside;
+		}
 		</style>
 	</head>
 	<body>
 		<div id="report">
-			<header>
-				<h1>“ Prioritising Education and Health ” with AI based products and solutions
-					From IIT Madras
-				</h1>
-			</header>
-			<div class="flex w-full justify-around m-16">
-				<div class="image-wrapper"><img src="{% static 'img/iitm.png' %}" alt="" height="225px" width="225px"></div>
-				<div class="image-wrapper"><img src="{% static 'img/iitm.png' %}" alt="" height="225px" width="225px"></div>
-			</div>
-			<div class="flex flex-col items-center justify-center m-16">
-				<h2>
-					{{ name }} Report Summary 
-				</h2>
-				<div class="flex flex-wrap justify-around w-full">
-					<div class="flex flex-col items-center justify-center max-w-100">
-						<h3 class="bg-blue white p-4">
-							Activity
-						</h3>
-						<ul class="bg-light-blue p-4">
-							<li class="m-4 image-wrapper">Hassan’s heart beat is {{ heartrate }} and cadence is observed to be {{ cadence }}</li>
-							<li class="m-4 image-wrapper">Please refer to Follow Up steps below  for standard ranges for the age group</li>
-						</ul>
-					</div>
-					<div class="flex flex-col items-center justify-center max-w-100">
-						<h3 class="bg-blue white p-4">
-							Foot Health
-						</h3>
-						<ul class="bg-light-blue p-4">
-							<li class="m-4 image-wrapper">Hassan’s foot health parameters as measured by IITM CESSA developed insole and analytics is {{ foothealth }}</li>
-							<li class="m-4 image-wrapper">Please refer to Follow Up steps for standard ranges for the age group</li>
-						</ul>
-					</div>
-					<div class="flex flex-col items-center justify-center max-w-100">
-						<h3 class="bg-blue white p-4">
-							Gait Stability
-						</h3>
-						<ul class="bg-light-blue p-4">
-							<li class="m-4 image-wrapper">Hassan's gait analysis is {{ gait }}</li>
-							<li class="m-4 image-wrapper">Hassan's stride length is {{ stride_length }} compared to the average {{ avg_stride_length }}</li>
-							<li class="m-4 image-wrapper">Please refer to Follow Up steps for standard ranges for the age group</li>
-						</ul>
-					</div>
-				</div>
-				<div class="flex items-center justify-center p-4 m-16">
-					<div class="flex flex-col border m-4">
-						<h4>Follow up based on the above:</h4>
-						<p>
-						The student and parent can login into <a href="www.eduswasth.in">www.eduswasth.in</a> and register for normal ranges of the above readings and sign up for personalized feedback based on report and specifics.
-						</p>
-					</div>
-					<div class="flex flex-col border m-4">
-						<h4>Hassan's Overall Grade:</h4>
-						<div class="flex p-4">
+			<div class="summary">
+				<header class="p-4">
+					<h1>“ Prioritising Education and Health ” with AI based products and solutions.	
+					</h1>
+				</header>
+				<div class="flex flex-col items-center justify-center m-16">
+					<!-- <h2> -->
+					<!-- 	{{ name }}'s Report Summary  -->
+					<!-- </h2> -->
+					<div class="flex flex-wrap justify-around w-full">
 
-							<span class="m-4">A+</span>
-							<span class="m-4 bg-light-blue">A</span>
-							<span class="m-4">B+</span>
-							<span class="m-4">B</span>
-							<span class="m-4">C+</span>
-							<span class="m-4">C</span>
-							<span class="m-4">D+</span>
-							<span class="m-4">D</span>
-							<span class="m-4">E</span>
+						<div class="flex flex-col items-center justify-start max-w-150">
+							<h3 class="bg-blue white p-4">
+								Cardio Health
+							</h3>
+							<div class="min-h-200 bg-light-blue">
+								<ul class="bg-light-blue p-8 min-h-60">
+									<li class="m-4 image-wrapper">{{ name }}’s heart beat is {{ heartrate }} bmp and cadence is {{ cadence }} steps per minute</li>
+									<li class="m-4 image-wrapper">The average heart rate and cadence for the age category 10-12 years are {{ avg_heartrate }} bpm and {{ avg_cadence }}.</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="flex flex-col items-center justify-start max-w-150">
+							<h3 class="bg-blue white p-4">
+								Body Mass Index
+							</h3>
+							<div class="min-h-200 bg-light-blue">
+								<ul class="bg-light-blue p-8 min-h-60">
+									<li class="m-4 image-wrapper">
+										{{ name }}'s height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="flex flex-col items-center justify-start max-w-150">
+							<h3 class="bg-blue white p-4">
+								Foot Health
+							</h3>
+							<div class="min-h-200 bg-light-blue">
+								<ul class="bg-light-blue p-8 min-h-60">
+									<li class="m-4 image-wrapper">{{ name }}'s toe pressure
+										is
+										{{ toe_pressure }} kpa, heel pressure
+										is {{ heel_pressure }} kpa, center of
+										pressure is {{ center_of_pressure }} kpa and
+										flat foot region pressure is {{ flat_foot }} kpa
+									</li>
+									<li class="m-4 image-wrapper">
+										The average values
+										among the age
+										category 10-12 years
+										are found to be {{ avg_toe_pressure }} kpa,
+										{{ avg_heel_pressure }} kpa, {{ avg_center_of_pressure }} kpa and {{ avg_flat_foot }} kpa
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="flex flex-col items-center justify-start max-w-150">
+							<h3 class="bg-blue white p-4">
+								Gait Stability
+							</h3>
+							<div class="min-h-200 bg-light-blue">
+								<ul class="bg-light-blue p-8 min-h-60">
+									<li class="m-4 image-wrapper">
+										{{ name }}'s stride
+										length is
+										observed to be
+										{{ stride_length }} and stride
+										velocity is {{ stride_velocity }}
+									</li>
+									<li class="m-4 image-wrapper">The average
+										values among the
+										age category 10-
+										12 years are
+										found to be {{ avg_stride_length }}
+										and {{ avg_stride_velocity }}</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
+				<div class="flex items-center justify-start p-4 m-16">
+					<div class="flex flex-col border m-4">
+						<h3>
+							Please refer to the annexure for detailed information
+						</h3>
+					</div>
+				</div>
+				<div class="flex flex-col m-4 text-left">
+					<div class="image-wrapper">
+
+						<h4>Cardio Health</h4>
+						<div class="flex flex-col text-left m-2">
+
+							<p class="m-2">
+							<span class="bold">Cadence: </span> 
+							It is the number of steps per minute, crucial for sprint speed and efficiency.
+							</p>
+							<p class="m-2">Interpretation: Higher cadence means quicker steps, balanced stride length, and better momentum.</p>
+							<p class="m-2"> Recommendation:  Use high-knee drills, strength training, and technique refinement to increase cadence.</p>
+							<p class="m-2">
+							<span class="bold">Heart Rate (HR): </span>
+							It measures the number of heartbeats per minute, indicating cardiovascular intensity and endurance.
+							</p>
+							<p class="m-2">Interpretation: Higher HR during sprints show maximum effort, and recovery rate post-sprint reflects cardiovascular fitness.</p>
+							<p class="m-2"> Recommendation: Interval training, sprint repeats, and endurance conditioning can help sprinters improve heart rate efficiency and recovery.</p>
+						</div>
+					</div>
+
+					<h4>Body Mass Index (BMI)</h4>
+					<div class="flex flex-col text-left m-2">
+						<p class="m-2">
+						<span class="bold">BMI: </span>
+						It is a measure of body fat based on height and weight, used to assess overall body composition.
+						</p>
+						<p class="m-2">Interpretation: A healthy BMI boosts speed and agility; extremes can hinder performance and raise injury risk.</p>
+						<p class="m-2"> Recommendation:  Use balanced nutrition, strength training, and monitor body composition to maintain optimal BMI.</p>
+					</div>
+					<h4>Foot Health</h4>
+					<div class="flex flex-col text-left m-2">
+						<p class="m-2">
+						<span class="bold">Toe Pressure: </span>
+						It is the force exerted by the toes during foot strike, crucial for push-off power and stability.
+						</p>
+						<p class="m-2">Interpretation: : Higher toe pressure improves propulsion and speed; uneven pressure may indicate imbalance.</p>
+						<p class="m-2"> Recommendation: Strengthen foot muscles, practice balance, and refine sprint technique to improve toe pressure.</p>
+						<p class="m-2">
+						<span class="bold">Heel Pressure: </span>
+						 It is the force exerted on the heel during foot strike, influencing stability and impact absorption.
+						</p>
+						<p class="m-2">Interpretation: Balanced heel pressure supports controlled landings; excessive heel pressure may indicate over striding</p>
+						<p class="m-2"> Recommendation: Improve sprint form, strengthen feet, and practice proper foot strike for optimal heel pressure.</p>
+						<p class="m-2">
+						<span class="bold">Center of Pressure (CoP): </span>
+						The point where force is concentrated on the foot during contact, impacting balance & stability.
+						</p>
+						<p class="m-2">Interpretation: A stable CoP indicates balanced foot mechanics; shifts may signal uneven weight distribution.</p>
+						<p class="m-2"> Recommendationn: Focus on balance drills, strengthen stabilizing muscles, and refine sprinting form to achieve a stable CoP.</p>
+						<p class="m-2">
+						<span class="bold">Flat Foot: </span>
+						Flat foot is a low or absent foot arch, affecting alignment and support.
+						</p>
+						<p class="m-2">Interpretation: It can reduce shock absorption, impact balance, and increase injury risk.</p>
+						<p class="m-2"> Recommendation: Strengthen foot arches, use supportive shoes, and focus on proper sprinting technique.</p>
+					
+					</div>
+					<h4>Gait Stability</h4>
+					<div class="flex flex-col text-left m-2">
+						<p class="m-2">
+						<span class="bold">Stride Length: </span>
+						 It is the distance covered in one step during a sprint, contributing to overall speed and efficiency.
+						</p>
+					<p class="m-2">Interpretation: Longer, controlled strides improve speed, but over striding can lead to inefficiency & increased injury risk.</p>
+					<p class="m-2"> Recommendation: Practice flexibility and strength exercises, focus on sprint technique.</p>
+					<p class="m-2">
+					<span class="bold">Stride Velocity: </span>
+					It is the speed of each stride, combining length and frequency
+					</p>
+					<p class="m-2">Interpretation: Higher stride velocity means faster sprints, balancing length and cadence.</p>
+					<p class="m-2"> Recommendation: : Focus on interval sprints, strength training, and technique drills to boost stride velocity.</p>
+					</div>
+				</div>
+			</div>
 				<hr>
 				<h2>PadhugAI Goals</h2>
 				<div class="flex flex-wrap justify-center w-full p-8">
@@ -240,7 +369,7 @@ body {
 				</div>
 				<hr>
 				<h2>Student's Activity Levels - Heart Rate</h2>
-				<div class="flex flex-col justify-center w-full p-8">
+				<div class="flex flex-col justify-start w-full p-8">
 
 
 					<div class="flex flex-col justify-center m-16">
@@ -267,22 +396,10 @@ body {
 							</thead>
 							<tbody>
 								<tr>
-									<td class="bg-blue white">Walking</td>
-									<td>{{walking_avg_bpm}}</td>
-									<td>{{walking_min_bpm}}</td>
-									<td>{{walking_max_bpm}}</td>
-								</tr>
-								<tr>
 									<td class="bg-blue white">Running</td>
 									<td>{{running_avg_bpm}}</td>
 									<td>{{running_min_bpm}}</td>
 									<td>{{running_max_bpm}}</td>
-								</tr>
-								<tr>
-									<td class="bg-blue white">Jumping</td>
-									<td>{{jumping_avg_bpm}}</td>
-									<td>{{jumping_min_bpm}}</td>
-									<td>{{jumping_max_bpm}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -293,7 +410,7 @@ body {
 				</div>
 				<hr>
 				<h2>Student's Activity Levels - Cadence</h2>
-				<div class="flex flex-col justify-center w-full p-8">
+				<div class="flex flex-col justify-start w-full p-8">
 
 
 					<div class="flex flex-col justify-center m-16">
@@ -313,7 +430,6 @@ body {
 						<h3>Performance</h3>
 						<div class="flex justify-start m-16 p-4 text-left">
 							<p><span class="bold m-4">Cadence: </span> {{cadence}} </p>
-							<p><span class="bold m-4">Percentile</span>: {{cadence_percentile}}</p>
 						</div>
 					</div>
 					<div class="flex justify-center m-16">
@@ -321,34 +437,8 @@ body {
 					</div>
 				</div>
 				<hr>
-				<h2>Cadence vs Heart Rate</h2>
-				<div class="flex flex-col justify-center w-full p-8">
-
-
-					<div class="flex flex-col justify-center m-16">
-						<h4>Cadence vs Heart rate clusters</h4>
-						<ul>
-							<li class="m-2 image-wrapper">
-								This compares the heart’s beats per minute recorded to the cadence of the child
-							</li>
-							<li class="m-2 image-wrapper">
-								Ideally we would like to achieve high cadence with low to moderate heart rates
-							</li>
-						</ul>
-						<h3>Performance</h3>
-						<div class="flex justify-start m-16 p-4 text-left">
-							<p><span class="bold m-4">Cadence: </span> {{ cadence }} </p>
-							<p><span class="bold m-4">Heart Rate</span>: {{ heart_rate }}</p>
-						</div>
-					</div>
-					<div class="flex justify-center m-16">
-						<div class="image-wrapper"><img src="data:image/png;base64,{{ cadence_vs_heart_rate_img|safe }}" alt="heart rate chart" class="border" height="450px"></div>
-					</div>
-				</div>
-
-				<hr>
 				<h2>Foot Health</h2>
-				<div class="flex flex-col justify-center w-full p-8">
+				<div class="flex flex-col justify-start w-full p-8">
 
 
 					<div class="flex flex-col justify-center m-16">
@@ -392,7 +482,7 @@ body {
 				</div>
 				<hr>
 				<h2>Center of Pressure</h2>
-				<div class="flex flex-col justify-center w-full p-8">
+				<div class="flex flex-col justify-start w-full p-8">
 
 
 					<div class="flex flex-col justify-center m-16">
@@ -430,7 +520,7 @@ body {
 				</div>
 				<hr>
 				<h2>Gait Stability Analysis - Walking Pattern</h2>
-				<div class="flex flex-col justify-center w-full p-8">
+				<div class="flex flex-col justify-start w-full p-8">
 
 
 					<div class="flex flex-col justify-center m-16">
@@ -478,7 +568,7 @@ body {
 				</div>
 				<hr>
 				<h2>Gait Stability Analysis - Assymetry</h2>
-				<div class="flex flex-col justify-center w-full p-8">
+				<div class="flex flex-col justify-start w-full p-8">
 
 
 					<div class="flex flex-col justify-center m-16">

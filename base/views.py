@@ -132,6 +132,10 @@ def view_report(request):
             data=json.dumps({"sid": str(student_id)})
         )
         res = req.json()
+        # __import__('pprint').pprint(res)
+        # write res to a json file
+        # with open("res.json", "w") as f:
+        #     json.dump(res, f)
         student_data = student_data_req.json()
         student_data_status = student_data.get("status")
     except Exception as e:
@@ -149,33 +153,36 @@ def view_report(request):
     swing_metrics = res[4]["swing metrics"]
     cop_metrics = res[2]["cop metrics"]
     pressure_metrics = res[0]["pressure metrics"]
+    flat_foot_metrics = res[1]["flatfoot metrics"]
+    height = student_data["height"]
+    wieght = student_data["weight"]
+    bmi = round((float(wieght) * 10000) / (float(height) * float(height)), 2)
 
     data = {
         "name": student_data["name"] if student_data_status == "success" else "",
         "age": student_data["age"] if student_data_status == "success" else "",
         # "gender": student_data["gender"] if student_data_status == "success" else "",
+        "bmi": bmi,
         "height": student_data["height"] if student_data_status == "success" else "",
-        "body_mass": student_data["weight"] if student_data_status == "success" else "",
-        "heart_rate": heart_beat_metrics[0]["avgheartbeat"],
-        "cadence": cadence_metrics[0]["rmeancadence"],
+        "weight": student_data["weight"] if student_data_status == "success" else "",
+        "heartrate": int(heart_beat_metrics[0]["avgheartbeat"]),
+        "cadence": int(cadence_metrics[0]["rmeancadence"]),
+        "toe_pressure": round(pressure_metrics[0]["ravgtoe"], 2),
+        "heel_pressure": round(pressure_metrics[0]["ravgheel"], 2),
+        "stride_length": round(stride_metrics[0]["lmnstridelen"], 2),
+        "stride_velocity": round(stride_metrics[0]["lmnstrideavelo"], 2),
+        "center_of_pressure": round(((round(cop_metrics[0]["rmeancopx"], 2) ** 2) + (round(cop_metrics[0]["rmeancopy"], 2) ** 2)) ** 0.5, 2),
+        "flat_foot": round(flat_foot_metrics[0]["rflatfoot"], 2),
         "right_toe_pressure": round(pressure_metrics[0]["ravgtoe"], 2),
         "left_toe_pressure": round(pressure_metrics[0]["lavgtoe"], 2),
         "right_heel_pressure": round(pressure_metrics[0]["ravgheel"], 2),
         "left_heel_pressure": round(pressure_metrics[0]["lavgheel"], 2),
-        "walking_avg_bpm": heart_beat_metrics[0]["avgheartbeat"],
-        "walking_min_bpm": heart_beat_metrics[0]["minheartbeat"],
-        "walking_max_bpm": heart_beat_metrics[0]["peakheartbeat"],
-        "running_avg_bpm": heart_beat_metrics[0]["avgheartbeat"],
+        "running_avg_bpm": int(heart_beat_metrics[0]["avgheartbeat"]),
         "running_min_bpm": heart_beat_metrics[0]["minheartbeat"],
         "running_max_bpm": heart_beat_metrics[0]["peakheartbeat"],
-        "jumping_avg_bpm": heart_beat_metrics[0]["avgheartbeat"],
-        "jumping_min_bpm": heart_beat_metrics[0]["minheartbeat"],
-        "jumping_max_bpm": heart_beat_metrics[0]["peakheartbeat"],
         "right_cop": round((((cop_metrics[0]["rmeancopx"] ** 2) + (cop_metrics[0]["rmeancopy"] ** 2)) ** 0.5)/10, 2),
         "left_cop": round((((cop_metrics[0]["lmeancopx"] ** 2) + (cop_metrics[0]["lmeancopy"] ** 2)) ** 0.5)/10, 2),
-        "stride_length": round(stride_metrics[0]["lmnstridelen"], 2),
         "stride_length_variability": round(stride_metrics[0]["rstridelenvar"], 2),
-        "stride_velocity": round(stride_metrics[0]["lmnstrideavelo"], 2),
         "stride_velocity_variability": round(stride_metrics[0]["lstridevelovar"], 2),
         "swing_time": round(swing_metrics[0]["lavgswing"], 2),
         "stance_time": round(stance_metrics[0]["lavgstance"], 2),
@@ -185,18 +192,15 @@ def view_report(request):
         "swing_time_assymetry": round(swing_metrics[0]["swingasym"], 2),
         "stance_time_assymetry": round(stance_metrics[0]["stanceasym"], 2),
         "heart_rate_img": plot_heart_rate(
-            [heart_beat_metrics[0]["minheartbeat"], heart_beat_metrics[0]["minheartbeat"],
-             heart_beat_metrics[0]["minheartbeat"]],
-            [heart_beat_metrics[0]["avgheartbeat"], heart_beat_metrics[0]["avgheartbeat"],
-             heart_beat_metrics[0]["avgheartbeat"]],
-            [heart_beat_metrics[0]["peakheartbeat"], heart_beat_metrics[0]["peakheartbeat"],
-             heart_beat_metrics[0]["peakheartbeat"]],
+            [round(heart_beat_metrics[0]["minheartbeat"], 2)],
+            [round(heart_beat_metrics[0]["avgheartbeat"], 2)],
+            [round(heart_beat_metrics[0]["peakheartbeat"], 2)],
         ),
         "cadence_img": cad_plot(round(cadence_metrics[0]["rmeancadence"], 2) if cadence_metrics[0]["rmeancadence"] else 114),
-        "cadence_vs_heart_rate_img": cad_bpm_plot(
-            round(cadence_metrics[0]["rmeancadence"],
-                  2) if cadence_metrics[0]["rmeancadence"] else 114,
-            heart_beat_metrics[0]["avgheartbeat"] if heart_beat_metrics[0]["avgheartbeat"] else 94),
+        # "cadence_vs_heart_rate_img": cad_bpm_plot(
+        #     round(cadence_metrics[0]["rmeancadence"],
+        #           2) if cadence_metrics[0]["rmeancadence"] else 114,
+        #     heart_beat_metrics[0]["avgheartbeat"] if heart_beat_metrics[0]["avgheartbeat"] else 94),
         "pressure_img": pressure_plot(
             round(pressure_metrics[0]["lavgtoe"], 2),
             round(pressure_metrics[0]["lavgheel"], 2),
