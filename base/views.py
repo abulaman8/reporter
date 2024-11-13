@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib import messages
 from utils.heart_rate import plot_heart_rate
 from utils.cadence_gauge import cad_plot
-from utils.cad_bpm_plot import cad_bpm_plot
 from utils.foot_pressure import pressure_plot
 from utils.cop import cop_plot
 from utils.assym import assym_plot
@@ -29,9 +28,10 @@ def view_suumary(request):
         "studentid": str(student_id),
         "activitytime": timestamp
     }
+    print(data)
     try:
-        # url = "http://128.199.22.46:8000/"
-        url = "http://10.21.170.133:8000/"
+        url = "http://146.190.10.144:8000/"
+        # url = "http://10.21.170.133:8000/"
 
         req = requests.get(
             f'{url}api/reportdata/',
@@ -115,9 +115,19 @@ def view_report(request):
         "studentid": str(student_id),
         "activitytime": timestamp
     }
+    com_data = data | {"totalsensor": 10}
     try:
-        # url = "http://128.199.22.46:8000/"
-        url = "http://10.21.170.133:8000/"
+        url = "http://146.190.10.144:8000/"
+        # url = "http://10.21.170.133:8000/"
+        start = time.time()
+        compute = requests.get(
+            f'{url}api/computemetrics/',
+            headers={'Content-Type': 'application/json'},
+            data=json.dumps(com_data)
+        )
+        end = time.time()
+        print("time taken to compute", end - start)
+        print(compute)
 
         req = requests.get(
             f'{url}api/reportdata/',
@@ -234,4 +244,6 @@ def view_report(request):
 
 
     }
+    print("stance assym", round(stance_metrics[0]["stanceasym"], 2))
+    print("swing assym", round(swing_metrics[0]["swingasym"], 2))
     return render(request, "base/index.html", data)
