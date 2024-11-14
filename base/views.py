@@ -119,15 +119,22 @@ def view_report(request):
     try:
         url = "http://146.190.10.144:8000/"
         # url = "http://10.21.170.133:8000/"
-        start = time.time()
-        compute = requests.get(
-            f'{url}api/computemetrics/',
+        check = requests.get(
+            f'{url}api/checkreport/',
             headers={'Content-Type': 'application/json'},
-            data=json.dumps(com_data)
+            data=json.dumps(data)
         )
-        end = time.time()
-        print("time taken to compute", end - start)
-        print(compute)
+        check_status = check.text
+        if check_status != "1":
+            start = time.time()
+            compute = requests.get(
+                f'{url}api/computemetrics/',
+                headers={'Content-Type': 'application/json'},
+                data=json.dumps(com_data)
+            )
+            end = time.time()
+            print("time taken to compute", end - start)
+            print(compute)
 
         req = requests.get(
             f'{url}api/reportdata/',

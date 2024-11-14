@@ -17,9 +17,21 @@ def create_activity_pie_chart():
 
     # Customize layout
     fig.update_layout(
-        title="Activity Duration Breakdown",
-        annotations=[dict(text='Activities', x=0.5, y=0.5,
-                          font_size=20, showarrow=False)]
+        title={
+            'text': "Activity Duration Breakdown",
+            'font': {'size': 36}  # Set title font size here
+        },
+        annotations=[dict(
+            text='Activities',
+            x=0.5, y=0.5,
+            font_size=30,  # Set annotation font size here
+            showarrow=False
+        )],
+        legend=dict(
+            font=dict(
+                size=24  # Set legend font size here
+            )
+        )
     )
 
     # Show the chart

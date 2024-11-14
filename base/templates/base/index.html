@@ -132,7 +132,7 @@ body {
 		}
 
 		.max-w-40p {
-			max-width: 40%;
+			max-width: 80%;
 		}
 		.image-wrapper {
 			page-break-inside: avoid;
@@ -140,7 +140,7 @@ body {
 		.summary * {
 			margin: 2px;
 			padding: 2px;
-			font-size: 0.95rem;
+			font-size: 0.935rem;
 		}
 		.summary header {
 			height: 60px;
@@ -153,6 +153,12 @@ body {
 			margin: 0;
 			padding: 0;
 			color: turquoise;
+		}
+		.summary h3 {
+			width: 100%;
+			padding: 6px;
+			text-align: center;
+			margin: 0;
 		}
 		ul {
 			list-style: disc inside;
@@ -172,7 +178,7 @@ body {
 					<!-- </h2> -->
 					<div class="flex flex-wrap justify-around w-full">
 
-						<div class="flex flex-col items-center justify-start max-w-150">
+						<div class="flex flex-col items-center justify-start max-w-150 bg-light-blue">
 							<h3 class="bg-blue white p-4">
 								Cardio Health
 							</h3>
@@ -184,7 +190,7 @@ body {
 							</div>
 						</div>
 
-						<div class="flex flex-col items-center justify-start max-w-150">
+						<div class="flex flex-col items-center justify-start max-w-150 bg-light-blue">
 							<h3 class="bg-blue white p-4">
 								Body Mass Index
 							</h3>
@@ -193,11 +199,15 @@ body {
 									<li class="m-4 image-wrapper">
 										{{ name }}'s height is {{ height }} cm and weight is {{ weight }} kg and his is BMI is calculated to be {{ bmi }}
 									</li>
+									<li>
+										The BMI ranges for children vary rapidly due the different growth patterns in children. 
+										Consult your doctor for a more accurate interpretation of the BMI.
+									</li>
 								</ul>
 							</div>
 						</div>
 
-						<div class="flex flex-col items-center justify-start max-w-150">
+						<div class="flex flex-col items-center justify-start max-w-150 bg-light-blue">
 							<h3 class="bg-blue white p-4">
 								Foot Health
 							</h3>
@@ -221,7 +231,7 @@ body {
 							</div>
 						</div>
 
-						<div class="flex flex-col items-center justify-start max-w-150">
+						<div class="flex flex-col items-center justify-start max-w-150 bg-light-blue">
 							<h3 class="bg-blue white p-4">
 								Gait Stability
 							</h3>
@@ -332,40 +342,40 @@ body {
 				<div class="flex flex-wrap justify-center w-full p-8">
 					<div class="flex flex-col m-4 border p-8 justify-center max-w-40p">
 						<p class="bold">
-						{{ name }} | {{ gender }} | {{ age }} years | Height: {{ height }}cm | Body Mass: {{ body_mass }}kg
+						{{ name }} | {{ age }} years | Height: {{ height }}cm | Body Mass: {{ weight }}kg
 						</p>
-						<div class="image-wrapper"><img src="{% static 'img/pass.jpg' %}" alt="hassan's picture" height="360px" width="270px" class="m-4 mx-auto"></div>
+						<div class="image-wrapper"><img src="{% static 'img/duration_2.png' %}" alt="hassan's picture" height="300px" class="m-4 mx-auto"></div>
 					</div>
-					<div class="flex flex-col m-4 p-8 justify-center max-w-40p">
-						<table class="m-4">
-							<thead>
-								<tr>
-									<th class="bg-blue white">Activities for PE</th>
-									<th class="bg-blue white">Measures for PE</th>
-									<th class="bg-blue white">Measuring devices</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Sprinting, Agility drills</td>
-									<td>
-										<ul>
-											<li class="m-2 image-wrapper">Endurance test</li>
-											<li class="m-2 image-wrapper">Balance test</li>
-										</ul>
-									</td>
-									<td>
-										<ul>
-											<li class="m-2 image-wrapper">Stopwatch</li>
-											<li class="m-2 image-wrapper">Smart Feet</li>
-											<li class="m-2 image-wrapper">Smart Excercise Platform</li>
-										</ul>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-						<div class="image-wrapper"><img src="{% static 'img/duration_2.png' %}" alt="duration chart" class="border" width="256px"></div>
-					</div>
+					<!-- <div class="flex flex-col m-4 p-8 justify-center max-w-40p"> -->
+					<!-- 	<table class="m-4"> -->
+					<!-- 		<thead> -->
+					<!-- 			<tr> -->
+					<!-- 				<th class="bg-blue white">Activities for PE</th> -->
+					<!-- 				<th class="bg-blue white">Measures for PE</th> -->
+					<!-- 				<th class="bg-blue white">Measuring devices</th> -->
+					<!-- 			</tr> -->
+					<!-- 		</thead> -->
+					<!-- 		<tbody> -->
+					<!-- 			<tr> -->
+					<!-- 				<td>Sprinting, Agility drills</td> -->
+					<!-- 				<td> -->
+					<!-- 					<ul> -->
+					<!-- 						<li class="m-2 image-wrapper">Endurance test</li> -->
+					<!-- 						<li class="m-2 image-wrapper">Balance test</li> -->
+					<!-- 					</ul> -->
+					<!-- 				</td> -->
+					<!-- 				<td> -->
+					<!-- 					<ul> -->
+					<!-- 						<li class="m-2 image-wrapper">Stopwatch</li> -->
+					<!-- 						<li class="m-2 image-wrapper">Smart Feet</li> -->
+					<!-- 						<li class="m-2 image-wrapper">Smart Excercise Platform</li> -->
+					<!-- 					</ul> -->
+					<!-- 				</td> -->
+					<!-- 			</tr> -->
+					<!-- 		</tbody> -->
+					<!-- 	</table> -->
+					<!-- 	<div class="image-wrapper"><img src="{% static 'img/duration_2.png' %}" alt="duration chart" class="border" width="256px"></div> -->
+					<!-- </div> -->
 				</div>
 				<hr>
 				<h2>Student's Activity Levels - Heart Rate</h2>
@@ -607,7 +617,7 @@ body {
 							<thead>
 								<tr>
 									<th class="bg-blue white">Stride Length Assymetry (&lt; 10%)</th>
-									<th class="bg-blue white">Stride Velocity Assymetry (&lt; 10%)</th>
+									<th class="bg-blue white">Stride Velocity Variability (&lt; 10%)</th>
 									<th class="bg-blue white">Swing Time Assymetry (&lt; 10%)</th>
 									<th class="bg-blue white">Stance Time Assymetry (&lt; 10%)</th>
 								</tr>
@@ -615,8 +625,8 @@ body {
 							<tbody>
 								<tr>
 									<td>{{ stride_length_assymetry }}</td>
-									<td>{{ stride_velocity_assymetry }}</td>
-									<td{{ swing_time_assymetry }}</td>
+									<td>{{ stride_velocity_variability }}</td>
+									<td>{{ swing_time_assymetry }}</td>
 									<td>{{ stance_time_assymetry }}</td>
 								</tr>
 							</tbody>
