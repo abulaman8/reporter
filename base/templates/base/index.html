@@ -140,7 +140,7 @@ body {
 		.summary * {
 			margin: 2px;
 			padding: 2px;
-			font-size: 0.935rem;
+			font-size: 0.9125rem;
 		}
 		.summary header {
 			height: 60px;
@@ -156,7 +156,7 @@ body {
 		}
 		.summary h3 {
 			width: 100%;
-			padding: 6px;
+			padding: 3px;
 			text-align: center;
 			margin: 0;
 		}
@@ -399,9 +399,9 @@ body {
 							<thead>
 								<tr>
 									<th class="bg-blue white">Activity</th>
-									<th class="bg-blue white">Avg bpm (70 to 110)</th>
-									<th class="bg-blue white">Min bpm (&gt; 60)</th>
-									<th class="bg-blue white">Max bpm (&lt; 180 )</th>
+									<th class="bg-blue white">Avg bpm</th>
+									<th class="bg-blue white">Min bpm</th>
+									<th class="bg-blue white">Max bpm</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -415,7 +415,7 @@ body {
 						</table>
 					</div>
 					<div class="flex justify-center m-16">
-						<div class="image-wrapper"><img src="data:image/png;base64,{{ heart_rate_img|safe }}" alt="heart rate chart" class="border" height="450px"></div>
+						<div class="image-wrapper"><img src="data:image/png;base64,{{ heart_rate_img|safe }}" alt="heart rate chart" class="border" width="720px"></div>
 					</div>
 				</div>
 				<hr>
@@ -467,8 +467,8 @@ body {
 							<thead>
 								<tr>
 									<th class="bg-blue white">Leg</th>
-									<th class="bg-blue white">Toe Pressure (20 to 40 kPa)</th>
-									<th class="bg-blue white">Heel Pressure (20 to 40 kPa)</th>
+									<th class="bg-blue white">Toe Pressure</th>
+									<th class="bg-blue white">Heel Pressure</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -507,7 +507,7 @@ body {
 							<thead>
 								<tr>
 									<th class="bg-blue white">Leg</th>
-									<th class="bg-blue white">COP (-2 to 2cm from center)</th>
+									<th class="bg-blue white">COP</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -547,13 +547,13 @@ body {
 						<table class="m-4">
 							<thead>
 								<tr>
-									<th class="bg-blue white">Stride Length (0.5 to 1m)</th>
+									<th class="bg-blue white">Stride Length</th>
 									<th class="bg-blue white">Stride Length variblity (5 to 15%)</th>
-									<th class="bg-blue white">Stride Velocity (0.8 to 1.2 m/s)</th>
-									<th class="bg-blue white">Stride Velocity variblity (5 to 15%)</th>
-									<th class="bg-blue white">Swing Time (0.3 to 0.5s)</th>
+									<th class="bg-blue white">Stride Velocity</th>
+									<th class="bg-blue white">Stride Velocity variblity(5 to 15%)</th>
+									<th class="bg-blue white">Swing Time </th>
 									<th class="bg-blue white">Swing Time variblity (5 to 15%)</th>
-									<th class="bg-blue white">Stance time (0.5 to 1s)</th>
+									<th class="bg-blue white">Stance time</th>
 									<th class="bg-blue white">Stance time variblity (5 to 15%)</th>
 								</tr>
 							</thead>

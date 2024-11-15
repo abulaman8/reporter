@@ -63,7 +63,7 @@ def assym_plot(data=[5, 5, 8, 4]):
         yaxis2_title_font=dict(size=20),
         xaxis_tickfont=dict(size=10),
         yaxis_tickfont=dict(size=20),
-        title_font=dict(size=28)
+        title_font=dict(size=20)
     )
 
     img = fig.to_image(format="png")
